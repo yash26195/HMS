@@ -3,6 +3,22 @@
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
+ 
+.appointment
+ {
+  background: lightgray;
+  color: #666666;
+  font-family: 'RobotoDraft', 'Roboto', sans-serif;
+  font-size: 14px;
+   border-radius: 5%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width:100%
+}
+
+
+  
+ 
 
 body {
     overflow-x: hidden;
@@ -15,7 +31,19 @@ p {
 p.small {
     font-size: 16px;
 }
-
+.sub-headline
+{
+	color:gray;
+}
+.client-content
+{
+	font-family: impact;
+	color: #4d0000;
+}
+.client-comment
+{
+	color: #ffff66;
+}
 a,
 a:hover,
 a:focus,
