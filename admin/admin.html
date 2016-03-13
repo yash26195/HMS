@@ -17,11 +17,13 @@
     <!-- Custom CSS -->
     <link href="css/sb-admin.css" rel="stylesheet">
 
+     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <!-- Morris Charts CSS -->
     <link href="css/plugins/morris.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+   <!-- <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.6.1/fullcalendar.min.js"></script> -->
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -51,53 +53,11 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
                     <ul class="dropdown-menu message-dropdown">
-                        <li class="message-preview">
-                            <a href="#">
-                                <div class="media">
-                                    <span class="pull-left">
-                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
-                                    </span>
-                                    <div class="media-body">
-                                        <h5 class="media-heading"><strong>John Smith</strong>
-                                        </h5>
-                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                                        <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                                    </div>
-                                </div>
-                            </a>
+                        <li>
+                         <a href="#"><i class="fa fa-fw  fa-2x fa-inbox"></i>Inbox</a>
                         </li>
-                        <li class="message-preview">
-                            <a href="#">
-                                <div class="media">
-                                    <span class="pull-left">
-                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
-                                    </span>
-                                    <div class="media-body">
-                                        <h5 class="media-heading"><strong>John Smith</strong>
-                                        </h5>
-                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                                        <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="message-preview">
-                            <a href="#">
-                                <div class="media">
-                                    <span class="pull-left">
-                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
-                                    </span>
-                                    <div class="media-body">
-                                        <h5 class="media-heading"><strong>John Smith</strong>
-                                        </h5>
-                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                                        <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="message-footer">
-                            <a href="#">Read All New Messages</a>
+                        <li>
+                       <a href="#"><i class="fa fa-fw fa-2x fa-pencil-square-o"></i>Create </a>
                         </li>
                     </ul>
                 </li>
@@ -137,6 +97,8 @@
                         <li>
                             <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
                         </li>
+
+
                         <li>
                             <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
                         </li>
@@ -214,17 +176,206 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Dashboard
+                           <center> Dashboard</center>
                             
                         </h1>
-                        <ol class="breadcrumb">
-                            <li>
-                                <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
-                            </li>
-                            <li class="active">
-                                <i class="fa fa-file"></i> Blank Page
-                            </li>
-                        </ol>
+                        <div class=container-fluid>
+                                    
+
+                                    <div class="row">
+                    <div class="col-lg-12">
+                        <div class="alert alert-info alert-dismissable">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                            <i class="fa fa-info-circle"></i>  <strong>3</strong>   <a href="#" class="alert-link">Emergencies</a> 
+                        </div>
+                    </div>
+                </div>
+                <!-- /.row -->
+
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-life-ring fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">26</div>
+                                        <div>New Appointments!</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="panel-footer">
+                                    <span class="pull-left">View Details</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-green">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-tasks fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">12</div>
+                                        <div>New Tasks!</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="panel-footer">
+                                    <span class="pull-left">View Details</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-yellow">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-shopping-cart fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">124</div>
+                                        <div>New Medicine Orders!</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="panel-footer">
+                                    <span class="pull-left">View Details</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-red">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-rupee fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">13</div>
+                                        <div>New Payments!</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="panel-footer">
+                                    <span class="pull-left">View Details</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                <center><button href="#" class="btn btn-primary" style="padding: 12px 24px;
+    border: 0 none;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size:20px;">  <i class="fa fa-2x fa-calendar"></i> Full Calendar</button>  </center>
+                </div>
+
+
+
+
+                 <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                       
+                        <div class=container-fluid>
+                                    
+
+                                    <div class="row"><br>
+                   
+                </div>
+                <!-- /.row -->
+
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <i class="fa fa-5x fa-user-md"></i>
+                         <br>
+
+                    <h2 style="position: relative; left: 5%">67</h2>
+                
+
+                    </div>
+                     <div class="col-lg-3 col-md-6">
+                        <i class="fa fa-5x fa-wheelchair"></i>
+                         <br>
+
+                    <h2 style="position: relative; left: 5% ">67</h2>
+                
+
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <i class="fa fa-5x fa-medkit"></i>
+                         <br>
+
+                    <h2 style="position: relative; left: 10%">67</h2>
+                
+
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <i class="fa fa-5x fa-ambulance "></i>
+                    <br>
+
+                    <h2 style="position: relative; left: 10%">67</h2>
+                
+                        </div>
+                    </div>
+                    <div class="row"><br></div>
+
+
+                    <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <i class="fa fa-5x fa-plus-square"></i>
+                         <br>
+
+                    <h2 style="position: relative; left: 5%">67</h2>
+                
+
+                    </div>
+                     <div class="col-lg-3 col-md-6">
+                        <i class="fa fa-5x fa-heart"></i>
+                         <br>
+
+                    <h2 style="position: relative; left: 5% ">67</h2>
+                
+
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <i class="fa fa-5x fa-money"></i>
+                         <br>
+
+                    <h2 style="position: relative; ">Rs 6700000</h2>
+                
+
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <i class="fa fa-5x fa-tint"></i>
+                    <br>
+
+                    <h2 style="position: relative; left: 10%">67 lt</h2>
+                
+                        </div>
                     </div>
                 </div>
                 <!-- /.row -->
