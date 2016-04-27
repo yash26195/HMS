@@ -1,8 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+    
      <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+
 <head>
 
     <meta charset="utf-8">
@@ -17,11 +20,12 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-	    <link href="css/sb-admin.css" rel="stylesheet">
-	 <link href="../WebContent/css/sb-admin.css" rel="stylesheet">
-	
+      <link href="css/sb-admin.css" rel="stylesheet">
+    <link href="../WebContent/css/sb-admin.css" rel="stylesheet">
+
     <!-- Morris Charts CSS -->
-    
+   
+
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
@@ -34,13 +38,10 @@
 
 </head>
 <body>
-
-
-<sql:setDataSource var="ds" url="jdbc:mysql://localhost/hms" user="root" password="" driver="com.mysql.jdbc.Driver" />
  <div id="wrapper">
-
+<sql:setDataSource var="ds" url="jdbc:mysql://localhost/hms" user="root" password="" driver="com.mysql.jdbc.Driver" />
         <!-- Navigation -->
-          <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+                <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -49,7 +50,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/hosp/admin/admin.jsp">Admin</a>
+                <a class="navbar-brand" href="admin.jsp">Admin</a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
@@ -113,60 +114,6 @@
                 </li>
             </ul>
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
-                    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="/hosp/admin/admin.jsp">Admin</a>
-            </div>
-            <!-- Top Menu Items -->
-            <ul class="nav navbar-right top-nav">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
-                    <ul class="dropdown-menu message-dropdown">
-                        <li>
-                         <a href="#"><i class="fa fa-fw  fa-2x fa-inbox"></i>Inbox</a>
-                        </li>
-                        <li>
-                       <a href="#"><i class="fa fa-fw fa-2x fa-pencil-square-o"></i>Create </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
-                    <ul class="dropdown-menu alert-dropdown">
-                        <li>
-                            <a href="#">Alert Name <span class="label label-default">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-primary">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-success">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-info">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-warning">Alert Badge</span></a>
-                        </li>
-                        <li>
-                            <a href="#">Alert Name <span class="label label-danger">Alert Badge</span></a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">View All</a>
-                        </li>
-                    </ul>
-                </li>
-                
-            </ul>
-            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li class="active">
@@ -178,7 +125,7 @@
                     <li>
                         <a href="/hosp/admin/ad-doc.jsp"><i class="fa fa-fw fa-user-md fa-2x"></i> Doctors</a>
                     </li>
-                     
+                      
                     <li>
                         <a href="/hosp/admin/ad-pat.jsp"><i class="fa fa-fw fa-wheelchair fa-2x"></i> Patient</a>
                     </li>
@@ -217,13 +164,8 @@
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
-       </nav>
-       
-
-</nav>
-
-        
-      <!--  <center>  <span  style="position: absolute;  top: 50%;transform: translateY(-50%);">  <i class="fa fa-3x fa-cog fa-spin"></i></span></center>-->
+        </nav>
+  <!--  <center>  <span  style="position: absolute;  top: 50%;transform: translateY(-50%);">  <i class="fa fa-3x fa-cog fa-spin"></i></span></center>-->
          <div id="page-wrapper">
 
             <div class="container-fluid">
@@ -232,7 +174,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                        <center> <h1 class="page-header">
-                           Manage Doctors
+                          Appointments
                             
                         </h1></center>
                         
@@ -243,7 +185,7 @@
 
 <div class="container">
  <center> <button type="button" class="btn btn-lg btn-success" data-toggle="modal" data-target="#addDoc"><i class="fa fa-plus"></i>
-Add Doctor</button></center>
+Create Appointment</button></center>
 <div id="addDoc" class="modal fade" role="dialog">
   <div class="modal-dialog">
 
@@ -251,27 +193,52 @@ Add Doctor</button></center>
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Add doctor</h4>
+        <h4 class="modal-title">Create appointment</h4>
       </div>
       <div class="modal-body">
-     <form role="form" action="<%=request.getContextPath() %>/Admin?action=add_doc" method="post">
+     <form role="form" action="<%=request.getContextPath() %>/Admin?action=add_ap" method="post">
       <div class="form-group">
-   <label for="name" > Name:</label>
+   <label for="name"> Name:</label>
    <input type="text" class="form-control" id="name" name="name">
    </div>
     <div class="form-group">
-      <label for="email" >Email:</label>
+      <label for="email">Email:</label>
       <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
     </div>
-    
+   
    <div class="form-group">
-   <label for="dpt" > Department:</label>
-   <input type="text" class="form-control" id="dpt" name="dpt">
+   <label for="dpt"> Concern:</label>
+   <input type="text" class="form-control" id="dpt" name="concern">
    </div>
        <div class="form-group">
-   <label for="pn" > Phone number:</label>
-   <input type="text" class="form-control" id="pno" name="phone">
+   <label for="pn"> Phone number:</label>
+   <input type="text" class="form-control" id="pv"name="number">
    </div>
+       <div class="form-group">
+   <label for="pn">Time</label>
+<input type="time" value="08:30:00" step="1800" name="time">
+
+   </div>
+     <div class="form-group">
+   <label for="pn"> Date</label>
+   <input type="date" name="date" min="2016-28-03">
+   </div>
+   <div class="form-group">
+     <sql:query  dataSource="${ds }" var="result">
+
+select * from doctor;
+
+</sql:query>
+<label for="name"> Doctor:</label>
+<select name="doctor">
+      <c:forEach var="row" items="${result.rows }">   
+      
+      <option value="${row.dname}"> <c:out value="${row.dname}" > </c:out>(<c:out value="${row.dept}" > </c:out>)</option>
+      
+    </c:forEach>
+      </select>
+    </div>
+   
     
    <center> <button type="submit" class="btn btn-default">Submit</button></center>
 
@@ -283,56 +250,55 @@ Add Doctor</button></center>
 
   </div>
 </div>
-     <sql:query  dataSource="${ds }" var="result">
+             <sql:query  dataSource="${ds }" var="result">
 
-select * from doctor;
+					select * from appointments;
 
-</sql:query>
-
-
-     
+</sql:query> 
   <table class="table">
     <thead>
       <tr>
         <th>Name</th>
-        <th>Contact</th>
-        <th>Email</th>
-		<th>Department</th>
-		
-      </tr>
       
+        <th>Email</th>
+        <th>Concern</th>
+        <th>Doctor</th>
+          <th>Date</th>
+        
+           <th>Time</th>
+             <th>action</th>
+           
+                  </tr>
     </thead>
     <tbody>
-    
-    <c:forEach var="row" items="${result.rows }">   
+        <c:forEach var="row" items="${result.rows }">   
       <tr>
-        <td><c:out value="${row.dname}"> </c:out></td>
-        <td><c:out value="${row.dphno}"> </c:out></td>
-        <td><c:out value="${row.demail}"> </c:out></td>
-        <td><c:out value="${row.dept}"> </c:out></td>
-   
+       <td><c:out value="${row.name}" > </c:out></td>
+        <td><c:out value="${row.email}" > </c:out></td>
+        <td><c:out value="${row.concern}" > </c:out></td>
+        <td><c:out value="${row.doctor}" > </c:out></td>
+        <td><c:out value="${row.date}" > </c:out></td>
+        <td><c:out value="${row.time}" > </c:out></td>
        <td>
       
        
-       
         <div class="btn-group">
-     <a href="<%=request.getContextPath() %>/Admin?action=deldoc&email=<c:out value="${row.demail }"></c:out>"> <i class="fa fa-2x fa-trash-o" > </i></a>
-         <i class="fa fa-fw fa-wheelchair fa-2x"></i>
-          <a href="<%=request.getContextPath() %>/Admin?action=view_app&name=<c:out value="${row.dname }"></c:out>"><i class="fa fa-fw fa-calendar fa-2x"></i> </a>
-     
-        
+     <a href="<%=request.getContextPath() %>/Admin?action=delapp&email=<c:out value="${row.email }"></c:out>"> 
+     <i class="fa fa-2x fa-trash-o" > </i></a>
+         
+          
+       <i class="fa fa-fw fa-file-text fa-2x" ></i>
+                       
+                  
 
- 
-     
       </div>
-       <!-- <div class="col-md-10"> <button type="button" style="font-size:20px;" class="btn btn-primary"><i class="fa fa-check" style="font-size:15px;"></i></button></div> --></td>
-     </tr>
+      </td>
+     </div> </tr>
     </c:forEach>
+     
     </tbody>
-    
   </table>
 </div>
-
 
             </div>
             <!-- /.container-fluid -->
@@ -348,7 +314,8 @@ select * from doctor;
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
-   
+    <!-- Morris Charts JavaScript -->
+
 
 </body>
 

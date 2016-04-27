@@ -1,8 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+ <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
 
     <meta charset="utf-8">
@@ -17,11 +17,14 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-	    <link href="css/sb-admin.css" rel="stylesheet">
-	 <link href="../WebContent/css/sb-admin.css" rel="stylesheet">
-	
+
+    <link href="css/sb-admin.css" rel="stylesheet">
+
+    <link href="../WebContent/css/sb-admin.css" rel="stylesheet">
+
     <!-- Morris Charts CSS -->
-    
+    <link href="css/plugins/morris.css" rel="stylesheet">
+
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
@@ -34,12 +37,10 @@
 
 </head>
 <body>
-
-
 <sql:setDataSource var="ds" url="jdbc:mysql://localhost/hms" user="root" password="" driver="com.mysql.jdbc.Driver" />
  <div id="wrapper">
 
-        <!-- Navigation -->
+            <!-- Navigation -->
           <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -218,9 +219,8 @@
             </div>
             <!-- /.navbar-collapse -->
        </nav>
-       
 
-</nav>
+
 
         
       <!--  <center>  <span  style="position: absolute;  top: 50%;transform: translateY(-50%);">  <i class="fa fa-3x fa-cog fa-spin"></i></span></center>-->
@@ -232,7 +232,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                        <center> <h1 class="page-header">
-                           Manage Doctors
+                           Manage Nurse
                             
                         </h1></center>
                         
@@ -243,7 +243,7 @@
 
 <div class="container">
  <center> <button type="button" class="btn btn-lg btn-success" data-toggle="modal" data-target="#addDoc"><i class="fa fa-plus"></i>
-Add Doctor</button></center>
+Add Nurse</button></center>
 <div id="addDoc" class="modal fade" role="dialog">
   <div class="modal-dialog">
 
@@ -251,27 +251,41 @@ Add Doctor</button></center>
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Add doctor</h4>
+        <h4 class="modal-title">Add Nurse</h4>
       </div>
       <div class="modal-body">
-     <form role="form" action="<%=request.getContextPath() %>/Admin?action=add_doc" method="post">
+     <form role="form" action="<%=request.getContextPath() %>/Admin?action=add_nur" method="post">
       <div class="form-group">
-   <label for="name" > Name:</label>
+   <label for="name"> Name:</label>
    <input type="text" class="form-control" id="name" name="name">
    </div>
+   <div class="form-group">
+     <sql:query  dataSource="${ds }" var="result">
+
+select * from doctor;
+
+</sql:query>
+<label for="name"> Doctor:</label>
+<select name="doctor">
+      <c:forEach var="row" items="${result.rows }">   
+      
+      <option value="${row.dname}"> <c:out value="${row.dname}" > </c:out></option>
+      
+    </c:forEach>
+      </select>
+    </div>
+   
+   
     <div class="form-group">
       <label for="email" >Email:</label>
       <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
     </div>
-    
-   <div class="form-group">
-   <label for="dpt" > Department:</label>
-   <input type="text" class="form-control" id="dpt" name="dpt">
-   </div>
+   
        <div class="form-group">
-   <label for="pn" > Phone number:</label>
-   <input type="text" class="form-control" id="pno" name="phone">
+   <label for="pn"> Phone number:</label>
+   <input type="text" class="form-control" id="pv" name="number">
    </div>
+     
     
    <center> <button type="submit" class="btn btn-default">Submit</button></center>
 
@@ -283,56 +297,47 @@ Add Doctor</button></center>
 
   </div>
 </div>
-     <sql:query  dataSource="${ds }" var="result">
+        <sql:query  dataSource="${ds }" var="result1">
 
-select * from doctor;
+select * from nurse;
 
-</sql:query>
-
-
-     
-  <table class="table">
+</sql:query>       
+ <table class="table">
     <thead>
       <tr>
         <th>Name</th>
-        <th>Contact</th>
-        <th>Email</th>
-		<th>Department</th>
+        <th>email</th>
+        <th>number</th>
+        <th>doctor</th>
 		
       </tr>
       
     </thead>
     <tbody>
     
-    <c:forEach var="row" items="${result.rows }">   
+    <c:forEach var="row" items="${result1.rows }">   
       <tr>
-        <td><c:out value="${row.dname}"> </c:out></td>
-        <td><c:out value="${row.dphno}"> </c:out></td>
-        <td><c:out value="${row.demail}"> </c:out></td>
-        <td><c:out value="${row.dept}"> </c:out></td>
-   
+        <td><c:out value="${row.nname}"> </c:out></td>
+        <td><c:out value="${row.nemail}"> </c:out></td>
+        <td><c:out value="${row.nphno}"> </c:out></td>
+            <td><c:out value="${row.dnname}"> </c:out></td>
+       
        <td>
       
        
-       
         <div class="btn-group">
-     <a href="<%=request.getContextPath() %>/Admin?action=deldoc&email=<c:out value="${row.demail }"></c:out>"> <i class="fa fa-2x fa-trash-o" > </i></a>
+     <a href="<%=request.getContextPath() %>/Admin?action=delnurse&email=<c:out value="${row.nemail }"></c:out>"> <i class="fa fa-2x fa-trash-o" > </i></a>
          <i class="fa fa-fw fa-wheelchair fa-2x"></i>
-          <a href="<%=request.getContextPath() %>/Admin?action=view_app&name=<c:out value="${row.dname }"></c:out>"><i class="fa fa-fw fa-calendar fa-2x"></i> </a>
-     
-        
+           <i class="fa fa-fw fa-calendar fa-2x"></i>
+                       <i class="fa fa-fw fa-file-text fa-2x"></i>
 
- 
-     
       </div>
        <!-- <div class="col-md-10"> <button type="button" style="font-size:20px;" class="btn btn-primary"><i class="fa fa-check" style="font-size:15px;"></i></button></div> --></td>
-     </tr>
+     </div> </tr>
     </c:forEach>
     </tbody>
     
-  </table>
-</div>
-
+  </table></div>
 
             </div>
             <!-- /.container-fluid -->
@@ -348,7 +353,10 @@ select * from doctor;
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
-   
+    <!-- Morris Charts JavaScript -->
+    <script src="js/plugins/morris/raphael.min.js"></script>
+    <script src="js/plugins/morris/morris.min.js"></script>
+    <script src="js/plugins/morris/morris-data.js"></script>
 
 </body>
 

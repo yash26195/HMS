@@ -17,11 +17,10 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-	    <link href="css/sb-admin.css" rel="stylesheet">
-	 <link href="../WebContent/css/sb-admin.css" rel="stylesheet">
-	
+    <link href="css/sb-admin.css" rel="stylesheet">
+	<link href="../WebContent/css/sb-admin.css" rel="stylesheet">
     <!-- Morris Charts CSS -->
-    
+
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
@@ -39,7 +38,7 @@
 <sql:setDataSource var="ds" url="jdbc:mysql://localhost/hms" user="root" password="" driver="com.mysql.jdbc.Driver" />
  <div id="wrapper">
 
-        <!-- Navigation -->
+    <!-- Navigation -->
           <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -218,9 +217,9 @@
             </div>
             <!-- /.navbar-collapse -->
        </nav>
-       
-
 </nav>
+
+
 
         
       <!--  <center>  <span  style="position: absolute;  top: 50%;transform: translateY(-50%);">  <i class="fa fa-3x fa-cog fa-spin"></i></span></center>-->
@@ -232,8 +231,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                        <center> <h1 class="page-header">
-                           Manage Doctors
-                            
+                         eQUIP
                         </h1></center>
                         
                     </div>
@@ -242,63 +240,20 @@
                 <!-- /.row -->
 
 <div class="container">
- <center> <button type="button" class="btn btn-lg btn-success" data-toggle="modal" data-target="#addDoc"><i class="fa fa-plus"></i>
-Add Doctor</button></center>
-<div id="addDoc" class="modal fade" role="dialog">
-  <div class="modal-dialog">
 
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Add doctor</h4>
-      </div>
-      <div class="modal-body">
-     <form role="form" action="<%=request.getContextPath() %>/Admin?action=add_doc" method="post">
-      <div class="form-group">
-   <label for="name" > Name:</label>
-   <input type="text" class="form-control" id="name" name="name">
-   </div>
-    <div class="form-group">
-      <label for="email" >Email:</label>
-      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
-    </div>
-    
-   <div class="form-group">
-   <label for="dpt" > Department:</label>
-   <input type="text" class="form-control" id="dpt" name="dpt">
-   </div>
-       <div class="form-group">
-   <label for="pn" > Phone number:</label>
-   <input type="text" class="form-control" id="pno" name="phone">
-   </div>
-    
-   <center> <button type="submit" class="btn btn-default">Submit</button></center>
-
-    </form>
-
-      </div>
-      
-    </div>
-
-  </div>
-</div>
      <sql:query  dataSource="${ds }" var="result">
 
-select * from doctor;
+select * from ward,equip where ward.eid=equip.e_id;
 
 </sql:query>
 
-
-     
   <table class="table">
     <thead>
       <tr>
-        <th>Name</th>
-        <th>Contact</th>
-        <th>Email</th>
-		<th>Department</th>
-		
+        <th>ID</th>
+           <th>Ward</th>
+        <th>equipment name</th>
+		<th>status</th>
       </tr>
       
     </thead>
@@ -306,33 +261,23 @@ select * from doctor;
     
     <c:forEach var="row" items="${result.rows }">   
       <tr>
-        <td><c:out value="${row.dname}"> </c:out></td>
-        <td><c:out value="${row.dphno}"> </c:out></td>
-        <td><c:out value="${row.demail}"> </c:out></td>
-        <td><c:out value="${row.dept}"> </c:out></td>
+        <td><c:out value="${row.eid}"> </c:out></td>
+        <td><c:out value="${row.ward_id}"> </c:out></td>
+        <td><c:out value="${row.equipname}"> </c:out></td>
+   	  
+   		<td><c:out value="${row.status}"> </c:out></td>
+   		<td>   
+   		
    
-       <td>
-      
-       
-       
-        <div class="btn-group">
-     <a href="<%=request.getContextPath() %>/Admin?action=deldoc&email=<c:out value="${row.demail }"></c:out>"> <i class="fa fa-2x fa-trash-o" > </i></a>
-         <i class="fa fa-fw fa-wheelchair fa-2x"></i>
-          <a href="<%=request.getContextPath() %>/Admin?action=view_app&name=<c:out value="${row.dname }"></c:out>"><i class="fa fa-fw fa-calendar fa-2x"></i> </a>
-     
-        
-
- 
-     
-      </div>
-       <!-- <div class="col-md-10"> <button type="button" style="font-size:20px;" class="btn btn-primary"><i class="fa fa-check" style="font-size:15px;"></i></button></div> --></td>
-     </tr>
+   		
+      </td>
+  
+      </tr>
     </c:forEach>
     </tbody>
     
   </table>
 </div>
-
 
             </div>
             <!-- /.container-fluid -->
@@ -348,7 +293,7 @@ select * from doctor;
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
-   
+ 
 
 </body>
 
